@@ -86,7 +86,7 @@ app.post(
   "/generate-from-documents",
   upload.single("documents"),
   async (req, res) => {
-    const filePath = req.files.path;
+    const filePath = req.file.path;
     const Buffer = fs.readFileSync(filePath);
     const base64Data = Buffer.toString("base64");
     const mimeType = req.file.mimetype;
